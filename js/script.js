@@ -113,7 +113,7 @@ function campoMinato(){
         const score = document.getElementById("score");
         const bombs = document.querySelectorAll(".cell");
         for (let f = 0; f <= bombs.length; f++){
-            if(arrayBombs.includes(IndexCell)){
+            if(arrayBombs.includes(f+1)){
                 // bombs.style.transition = "3s";
                 bombs[f].classList.add("displayPlayOver");
                 // bombs.innerHTML = `<i class="fa-solid fa-bomb fa-beat"></i>`;
