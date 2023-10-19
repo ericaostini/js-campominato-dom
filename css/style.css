@@ -18,10 +18,14 @@ body{
 .changeCol{
     background-color: blue;
 }
-.displayPlay{
+.displayPlayCon{
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
     color: white;
+    background-color: blue;
+}
+.displayPlayOver{
+    background-color: red;
 }
