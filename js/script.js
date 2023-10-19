@@ -116,14 +116,15 @@ function campoMinato(){
             singCell.style.transition = "3s";
             singCell.classList.add("displayPlay");
             singCell.innerHTML = `<i class="fa-solid fa-bomb fa-beat"></i>`;
+            score.innerHTML = `GAME OVER!!`;
         } else{
             singCell.style.backgroundColor = "blue";
             singCell.style.transition = "1s";
             singCell.classList.add("displayPlay");
             singCell.innerHTML = IndexCell;
             punteggio++;
+            score.innerHTML = `Il tuo punteggio è: ${punteggio}`;
         }
-        score.innerHTML = `Il tuo punteggio è: ${punteggio}`;
     }
 }
 
