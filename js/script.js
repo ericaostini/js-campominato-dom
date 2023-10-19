@@ -33,6 +33,8 @@ function campoMinato(){
         console.log(optionLiv);
         const playground = document.getElementById("playground");
         playground.innerHTML = " ";
+        playground.style.transition = "1s";
+        playground.style.background = "green";
         let numberCell;
         switch (optionLiv){
             case 1:
