@@ -108,8 +108,8 @@ function campoMinato(){
      * @param {number} IndexCell 
      * @param {Object} singCell 
      */
+    let punteggio = 0;
     function checkBomb(arrayBombs, IndexCell, singCell){
-        let punteggio = 0;
         const score = document.getElementById("score");
         const bombs = document.querySelectorAll(".cell");   
         if(arrayBombs.includes(IndexCell)){
@@ -126,7 +126,7 @@ function campoMinato(){
             singCell.classList.add("displayPlayCon");
             singCell.innerHTML = IndexCell;
             punteggio++;
-            score.innerHTML = `Il tuo punteggio è: ${punteggio}`
+            score.innerHTML = `Il tuo punteggio è: ${punteggio}`;
         };
     }   
 }
