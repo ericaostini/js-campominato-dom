@@ -89,7 +89,6 @@ function campoMinato(){
      */
     function displayCell(numberCell, IndexCell,arrayBombs){
         const numCellSq = Math.sqrt(numberCell);
-        let score = 0;
         // creo div che formerà la cella a cui assegno le rispettive classi
         const scorePoints = document.getElementById("score");
         let singCell = document.createElement("div");
@@ -98,12 +97,20 @@ function campoMinato(){
         singCell.style.height = `calc(100% / ${numCellSq})`;
         singCell.addEventListener("click", () => {
             console.log("L'indice della casella è: " + IndexCell);
-            drawBomb(arrayBombs, IndexCell, singCell, numberCell); 
+            checkBomb(arrayBombs, IndexCell, singCell);
         },{once:true});
         return singCell;
     };
 
-    function drawBomb(arrayBombs, IndexCell, singCell){
+    /**
+     * funzione che controlla casella se è una bomba o un semplice numero
+     * @param {Array} arrayBombs 
+     * @param {number} IndexCell 
+     * @param {Object} singCell 
+     */
+    let punteggio = 0;
+    function checkBomb(arrayBombs, IndexCell, singCell){
+        const score = document.getElementById("score");
         if(arrayBombs.includes(IndexCell)){
             singCell.style.backgroundColor = "red";
             singCell.style.transition = "3s";
@@ -114,23 +121,12 @@ function campoMinato(){
             singCell.style.transition = "1s";
             singCell.classList.add("displayPlay");
             singCell.innerHTML = IndexCell;
-            arrayBombs.includes(IndexCell);
+            punteggio++;
         }
+        score.innerHTML = `Il tuo punteggio è: ${punteggio}`;
     }
 }
 
-function checkScore(check, arrayBombs, singCell){
-    if(check){
-        for (let r = 0; r < arrayBombs.length; r++){
-            singCell.style.backgroundColor = "red";
-            singCell.classList.add("displayPlay");
-            singCell.innerHTML = `<i class="fa-solid fa-bomb fa-beat"></i>`;
-        }
-    }
-}
-function gameOver(){
-
-}
 function getRandomInt(min, max){
     return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
 };
