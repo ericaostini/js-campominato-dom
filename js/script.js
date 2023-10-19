@@ -119,7 +119,9 @@ function campoMinato(){
                 if(arrayBombs.includes(f+1)){
                     bombs[f].classList.add("displayPlayOver");
                     bombs[f].innerHTML = `<i class="fa-solid fa-bomb fa-beat"></i>`;
-                    score.innerHTML = `GAME OVER!!`;
+                    score.innerHTML = `
+                    <div><i class="fa-solid fa-face-grin-tears fa-beat fa-xl" style="color: #fbf22f;"></i></div>
+                    <div> GAME OVER!!</div>`;
                 }
             }       
         } else{
