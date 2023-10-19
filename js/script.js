@@ -115,8 +115,8 @@ function campoMinato(){
         if(arrayBombs.includes(IndexCell)){
             singCell.classList.add("displayPlayOver");
             singCell.innerHTML = `<i class="fa-solid fa-bomb fa-beat"></i>`;
-            for (let f = 1; f <= bombs.length; f++){
-                if(arrayBombs.includes(f)){
+            for (let f = 0; f < bombs.length; f++){
+                if(arrayBombs.includes(f+1)){
                     bombs[f].classList.add("displayPlayOver");
                     bombs[f].innerHTML = `<i class="fa-solid fa-bomb fa-beat"></i>`;
                     score.innerHTML = `GAME OVER!!`;
