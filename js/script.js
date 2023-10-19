@@ -108,26 +108,29 @@ function campoMinato(){
      * @param {number} IndexCell 
      * @param {Object} singCell 
      */
-    let punteggio = 0;
     function checkBomb(arrayBombs, IndexCell, singCell){
+        let punteggio = 0;
         const score = document.getElementById("score");
         const bombs = document.querySelectorAll(".cell");
-        for (let f = 0; f <= bombs.length; f++){
-            if(arrayBombs.includes(f+1)){
-                // bombs.style.transition = "3s";
-                bombs[f].classList.add("displayPlayOver");
-                // bombs.innerHTML = `<i class="fa-solid fa-bomb fa-beat"></i>`;
-                score.innerHTML = `GAME OVER!!`;
-            } else{
-                singCell.classList.add("displayPlayCon");
-                singCell.innerHTML = IndexCell;
-                punteggio++;
-                score.innerHTML = `Il tuo punteggio è: ${punteggio}`;
-            }
-        }
-
-    }
+        if(arrayBombs.includes(IndexCell)){
+            for (let f = 0; f <= bombs.length; f++){
+                if(arrayBombs.includes(f)){
+                    // bombs.style.transition = "3s";
+                    bombs[f].classList.add("displayPlayOver");
+                    // bombs.innerHTML = `<i class="fa-solid fa-bomb fa-beat"></i>`;
+                    score.innerHTML = `GAME OVER!!`;
+                }
+            }       
+        }else{
+            singCell.classList.add("displayPlayCon");
+            singCell.innerHTML = IndexCell;
+            punteggio++;
+            score.innerHTML = `Il tuo punteggio è: ${punteggio}`
+        };
+    }   
 }
+
+
 
 function getRandomInt(min, max){
     return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
