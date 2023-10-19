@@ -111,17 +111,18 @@ function campoMinato(){
     function checkBomb(arrayBombs, IndexCell, singCell){
         let punteggio = 0;
         const score = document.getElementById("score");
-        const bombs = document.querySelectorAll(".cell");
+        const bombs = document.querySelectorAll(".cell");   
         if(arrayBombs.includes(IndexCell)){
-            for (let f = 0; f <= bombs.length; f++){
+            singCell.classList.add("displayPlayOver");
+            singCell.innerHTML = `<i class="fa-solid fa-bomb fa-beat"></i>`;
+            for (let f = 1; f <= bombs.length; f++){
                 if(arrayBombs.includes(f)){
-                    // bombs.style.transition = "3s";
                     bombs[f].classList.add("displayPlayOver");
-                    // bombs.innerHTML = `<i class="fa-solid fa-bomb fa-beat"></i>`;
+                    bombs[f].innerHTML = `<i class="fa-solid fa-bomb fa-beat"></i>`;
                     score.innerHTML = `GAME OVER!!`;
                 }
             }       
-        }else{
+        } else{
             singCell.classList.add("displayPlayCon");
             singCell.innerHTML = IndexCell;
             punteggio++;
