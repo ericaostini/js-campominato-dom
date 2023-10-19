@@ -1,0 +1,27 @@
+body{
+    background-color: black;
+}
+#playground{
+    width: 500px;
+    height: 500px;
+    background-color: green;
+    margin-right: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cell{
+    border: 2px solid white;
+    /* width: calc(100% / 10);
+    height: calc(100% / 10); */
+}
+.changeCol{
+    background-color: blue;
+}
+.displayPlay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    color: white;
+}
